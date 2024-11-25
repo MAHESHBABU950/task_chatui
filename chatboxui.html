@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHATBOX UI</title>
+    <style>
+        .div1 {
+            border: 2px solid rgb(43, 82, 96);
+            border-radius: 20px;
+            height: 500px;
+            width: 300px;
+            background-color: rgb(7, 40, 61);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow-y: auto; /* Enable vertical scrolling for chat messages */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .b1 {
+            border: 2px solid rgb(43, 82, 96);
+            height: 70px;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            background-color: rgb(43, 82, 96);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .b1 .profile-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .b1 img.profile {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .b1 .profile-names {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .b1 .profile-names .name {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .b1 .profile-names .status {
+            color: lightgray;
+            font-size: 12px;
+        }
+
+        .b1 .back-arrow {
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .b1 .call-options {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .b1 .call-options .call-icon {
+            padding: 10px;
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+        }
+
+        .chat-container {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Space between chat bubbles and date reminders */
+        }
+
+        .date-divider {
+            text-align: center;
+            color: white;
+            font-size: 12px;
+            background-color: rgb(43, 82, 96);
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 10px auto;
+            width: fit-content;
+        }
+
+        .chat-bubble {
+            max-width: 80%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .chat-bubble.user {
+            background-color: rgb(0, 132, 255);
+            color: white;
+            align-self: flex-end;
+        }
+
+        .chat-bubble.other {
+            background-color: rgb(220, 220, 220);
+            color: black;
+            align-self: flex-start;
+        }
+
+        .message-box button:hover {
+            background-color: rgb(0, 110, 220);
+        }
+
+        .message-box {
+            width: 100%;
+            height: 70px; /* Adjust height */
+            display: flex;
+            align-items: center;
+            padding: 15px; /* Increase padding */
+            gap: 10px;
+            box-sizing: border-box;
+        }
+        
+        .message-box input {
+            flex: 1;
+            height: 20px; /* Adjust input height */
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            font-size: 15px; /* Adjust font size */
+            outline: none;
+        }
+        
+        .message-box button {
+            width: 50px; /* Adjust button size */
+            height: 40px; /* Adjust button size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0; /* Remove padding */
+        }
+        
+        .message-box button img {
+            width: 30px; /* Adjust image size */
+            height: 30px; /* Adjust image size */
+        }
+        
+        
+        /*chat scrolling action*/
+        .chat-container {
+            width: 100%;
+            height: 350px; /* Set a fixed height for the chat container */
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Space between chat bubbles and date reminders */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        
+        .chat-container::-webkit-scrollbar {
+            width: 8px; /* Width of the scrollbar */
+        }
+        
+        .chat-container::-webkit-scrollbar-thumb {
+            background-color: rgb(43, 82, 96); /* Scrollbar thumb color */
+            border-radius: 10px;
+        }
+        
+        .chat-container::-webkit-scrollbar-track {
+            background-color: rgb(7, 40, 61); /* Scrollbar track color */
+        }
+
+
+    </style>
+</head>
+<body bgcolor="lightgray">
+    <h1 align="center">ChatBox UI</h1>
+    <center>
+        <div class="div1">
+            <div class="b1">
+                <span class="back-arrow">&#8592;</span> <!-- Back arrow -->
+                <div class="profile-container">
+                    <img src="./7.jpg" alt="Profile" class="profile"> <!-- Profile image -->
+                    <div class="profile-names">
+                        <span class="name">Mahi Yadav</span> <!-- Name -->
+                        <span class="status">Typing...</span> <!-- Status -->
+                    </div>
+                </div>
+                <div class="call-options">
+                    <img src="call.png" alt="Call" class="call-icon"> <!-- Call icon -->
+                    <img src="vcall.png" alt="Video Call" class="call-icon"> <!-- Video Call icon -->
+                </div>
+            </div>
+            
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <!-- Date Divider -->
+                <div class="date-divider">Yesterday</div>
+
+                <!-- Chat Bubbles for Yesterday -->
+                <div class="chat-bubble user">Hey, how are you?</div>
+                <div class="chat-bubble other">I'm good, how about you?</div>
+
+                <!-- Date Divider -->
+                <div class="date-divider">Today</div>
+
+                <!-- Chat Bubbles for Today -->
+                <div class="chat-bubble user">What the plans by the night?</div>
+                <div class="chat-bubble other">ntg,wt abt u?</div>
+                <div class="chat-bubble user">Cool</div>
+                <div class="chat-bubble other">Yup</div>
+                <div class="chat-bubble user">How was the day?</div>
+                <div class="chat-bubble other">too boring!</div>
+                <div class="chat-bubble user">sme</div>
+                <div class="chat-bubble other">Lets have an out then</div>
+                <div class="chat-bubble user">Sure!</div>
+                <div class="chat-bubble other">Ok.i'm coming</div>
+                <div class="chat-bubble user">i'm waiting!</div>
+                <div class="chat-bubble other">5min</div>
+                <div class="chat-bubble user">Ok</div>
+            </div>
+
+            <!-- Message Input Box -->
+            <div class="message-box">
+                <input type="text" placeholder="Type a message..." />
+                <button style="border: none; background: none; cursor: pointer;">
+                    <img src="send.png" alt="Button Image" style="width: 40px; height: 30px;">
+                </button>
+            </div>
+        </div>
+    </center>
+</body>
+</html>
